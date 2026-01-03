@@ -1,0 +1,10 @@
+
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{db}/documents {
+  match /subscriptions/{uid} {
+   allow read: if request.auth.uid == uid;
+   allow write: if request.auth.uid == "uCrQgHFj9ZXX27nErdjXi9qmK2j2";
+  }
+ }
+}
